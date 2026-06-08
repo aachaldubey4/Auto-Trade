@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* ── Override browser autofill yellow/white background ── */
+/*   Uses a very dark semi-transparent colour to blend with glassmorphic inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 40px rgba(30, 30, 42, 0.95) inset !important;
+  -webkit-text-fill-color: #e5e7eb !important;
+  caret-color: #e5e7eb;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ── Admin panel user action buttons consistency ── */
+.admin-action-btn {
+  @apply btn btn-xs font-bold rounded-lg transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm;
+  min-width: 2.25rem;
+  height: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
